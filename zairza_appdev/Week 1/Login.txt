@@ -1,0 +1,125 @@
+import 'package:flutter/material.dart';
+
+void main() => runApp(Home());
+
+class Home extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        backgroundColor: Colors.white,
+        body: Column(
+            
+            children: <Widget>[
+              SizedBox(
+                height: 140.0,
+              ),
+              Align(
+                alignment: Alignment.center,
+                child: Text('Skillkart',
+                    style: TextStyle(
+                      fontSize: 48.0,
+                      fontWeight: FontWeight.w700,
+                      fontFamily: 'Roboto',
+                    )),
+              ),
+              
+              SizedBox(
+                height:40.0,
+              ),
+              Align(
+                alignment: Alignment.center,
+                child: Text('Login',
+                    style: TextStyle(
+                      fontSize: 24.0,
+                      fontWeight: FontWeight.w700,
+                      fontFamily: 'Roboto',
+                    )),
+              ),
+              
+              SizedBox(
+                height:40.0,
+              ),
+              TextBox(),
+                      SizedBox(
+              height: 10.0,
+            ),
+           Align(
+             alignment: Alignment.center,
+             child:  Container(
+                width: 318.0,
+                height: 40.0,
+                child: ElevatedButton(  
+                   child: Text(
+                     'Login', style: TextStyle(fontSize: 24.0),
+                   ),
+                   style: ButtonStyle(
+                     foregroundColor: MaterialStateProperty.all<Color>(Colors.white),
+                     backgroundColor: MaterialStateProperty.all<Color>(Colors.blue),
+                     shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                     RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(20.0)
+                     )),
+                   ),
+                onPressed: () {},  
+              ),  
+            ),
+           ),
+           
+              SizedBox(
+                height:20.0,
+            ),
+               Align(
+                alignment: Alignment.center,
+                child: Text('Don\'t have an account? Register',
+                    style: TextStyle(
+                      fontSize: 14.0,
+                      fontWeight: FontWeight.w500,
+                      fontFamily: 'Roboto',
+                    )),
+              ),
+            ],
+         
+        ),
+        ));     
+       
+  
+ }
+    }
+
+
+class TextBox extends StatefulWidget {
+  @override
+  TextBoxState createState() {
+    return TextBoxState();
+  }
+}
+
+class TextBoxState extends State<TextBox> {
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: <Widget>[
+        Padding(
+          padding: EdgeInsets.symmetric(horizontal: 8, vertical: 16),
+          child: TextField(
+            decoration: InputDecoration(
+              border: OutlineInputBorder(),
+              hintText: 'Enter your email Address',
+            ),
+          ),
+        ),
+        Padding(
+          padding: EdgeInsets.symmetric(horizontal: 8, vertical: 8),
+          child: TextField(
+            decoration: InputDecoration(
+              border: OutlineInputBorder(),
+              hintText: 'Password',
+      ),
+            ),
+          ),
+            ]);
+   }
+}
+
